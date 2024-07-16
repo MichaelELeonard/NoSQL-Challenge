@@ -8,7 +8,7 @@ The UK Food Standards Agency evaluates various establishments across the United 
 To start this challenge a json file of data was imported the terminal using the mongoimport command: 
 
 <img src="Pics/SetUp#1.png" width="805" height="20">
-
+ 
 A Jupyters notebook file ‘NoSQL_setup_working’ was opened in a MS VSCode environment and the dependencies needed for the project were imported:
 
 from pymongo import MongoClient
