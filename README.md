@@ -74,45 +74,9 @@ The results of these four questions were pulled from the database using techniqu
 
 #### WHICH ESTABLISHMENTS HAVE A HYGIENE SCORE EQUAL TO 20?
 For this question a query was set up using 'scores.Hygiene' = 20 and then the query established using the .find function with the results being stored in a variable called ‘hygiene_results’.  The count_doucments function was used to display the number of documents (restaurants) resulting from the query, with the total stored in ‘hygiene_count’.  The resulting count output was 41 establishments had hygiene scores = 20 and the find_one function was used to display the first establishment meeting the criteria.  The code used to acquire the desired result was:
-hygiene_query = {'scores.Hygiene' : 20}
 
-hygiene_results = establishments.find(hygiene_query)
+<img src="Pics/Analysis1.png" width="617" height="403">
 
-hygiene_count = establishments.count_documents(hygiene_query)
-
-print(f'{hygiene_count} establishments had hygiene scores = 20.')
-print('')
-print('--------------------')
-print('')
-
-pprint(establishments.find_one(hygiene_query)) 
-
-returning:
-
-41 establishments had hygiene scores = 20.
-
---------------------
-
-{'AddressLine1': '5-6 Southfields Road',
- 'AddressLine2': 'Eastbourne',
- 'AddressLine3': 'East Sussex',
- ...
- 'RatingKey': 'fhrs_0_en-gb',
- 'RatingValue': 0,
- ...
-          'returncode': None,
-          'totalCount': 0,
-          'totalPages': 0},
- 'scores': {'ConfidenceInManagement': 20, 'Hygiene': 20, 'Structural': 20}}
-
-The variable ‘hygiene_results’ was then read into a Pandas DataFrame using:
-•	hygiene_results_df = pd.DataFrame(hygiene_results) 
-
-The number of rows in the ‘hygiene_results_df’ was established for consistency using:   
-•	len(hygiene_results_df)
-
-And a portion of ‘hygiene_results_df’ was displayed using:
-•	hygiene_results_df.head(10)
 
 ### WHICH ESTABLISHMENTS IN LONDON HAVE A `RATINGVALUE` GREATER THAN OR EQUAL TO 4?
 For this question a query ‘RatingValue_query’ was set up to find any permutation of London in the field 'LocalAuthorityName' which also had a ‘RatingValue’ of greater than or equal to 4.  ‘RatingValue_query’ used the '$regex' function to locate London in the 'LocalAuthorityName' and '$gte' was used to find the RatingValues greater than or equal to 4.  ‘RatingValue_query’ was used with a .find function to query the establishments collection and the results being stored in the variable RatingValue_results.  The count_doucments function was used to display the number of documents (restaurants) resulting from the query with the total stored in ‘RatingValue_count’.  The resulting count output was that there was 33 establishments in London with RatingValue >= 4.and the find_one function was used to display the first establishment meeting the criteria.  The code used to acquire the desired result was:
