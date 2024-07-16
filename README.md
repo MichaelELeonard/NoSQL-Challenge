@@ -7,7 +7,7 @@ The UK Food Standards Agency evaluates various establishments across the United 
 # PART 1: DATABASE AND JUPYTER NOTEBOOK SET UP 
 To start this challenge a json file of data was imported the terminal using the mongoimport command: 
 
-<img src="Pics/Header.jpg" width="900" height="500">
+<img src="Pics/SetUp#1.png" width="900" height="500">
 
 A Jupyters notebook file ‘NoSQL_setup_working’ was opened in a MS VSCode environment and the dependencies needed for the project were imported:
 
