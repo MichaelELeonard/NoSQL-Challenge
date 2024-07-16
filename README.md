@@ -80,41 +80,11 @@ For this question a query was set up using 'scores.Hygiene' = 20 and then the qu
 
 ### WHICH ESTABLISHMENTS IN LONDON HAVE A `RATINGVALUE` GREATER THAN OR EQUAL TO 4?
 For this question a query ‘RatingValue_query’ was set up to find any permutation of London in the field 'LocalAuthorityName' which also had a ‘RatingValue’ of greater than or equal to 4.  ‘RatingValue_query’ used the '$regex' function to locate London in the 'LocalAuthorityName' and '$gte' was used to find the RatingValues greater than or equal to 4.  ‘RatingValue_query’ was used with a .find function to query the establishments collection and the results being stored in the variable RatingValue_results.  The count_doucments function was used to display the number of documents (restaurants) resulting from the query with the total stored in ‘RatingValue_count’.  The resulting count output was that there was 33 establishments in London with RatingValue >= 4.and the find_one function was used to display the first establishment meeting the criteria.  The code used to acquire the desired result was:
-RatingValue_query = {"LocalAuthorityName":{'$regex' : "London"}, "RatingValue" : {'$gte' : 4}}
 
-RatingValue_results = establishments.find(RatingValue_query)
+<img src="Pics/Analysis2.png" width="860" height="383">
 
-RatingValue_count = establishments.count_documents(RatingValue_query)
 
-print(f"There are {RatingValue_count} documents for London establishments with RatingValue >= 4.")
-print('')
-print('--------------------')
-print('')
 
-pprint(establishments.find_one(RatingValue_query))
-
-returning:
-
-There are 33 documents for London establishments with RatingValue >= 4.
-
---------------------
-
-{'AddressLine1': 'Oak Apple Farm Building 103 Sheernes Docks',
- 'AddressLine2': 'Sheppy Kent',
-  ...
-          'returncode': None,
-          'totalCount': 0,
-          'totalPages': 0},
- 'scores': {'ConfidenceInManagement': 5, 'Hygiene': 5, 'Structural': 10}}
-
-The variable ‘RatingValue_results’ was then read into a Pandas DataFrame using:
-RatingValue_results_df = pd.DataFrame(RatingValue_results)
-
-The number of rows in the ‘RatingValue_results_df’ was established for consistency using:   
-•	len(RatingValue_results_df)
-
-And a portion of RatingValue_results_df was displayed using:
-•	RatingValue_results_df.head(10)
 ### WHAT ARE THE TOP 5 ESTABLISHMENTS WITH A `RATINGVALUE` RATING VALUE OF 5, SORTED BY LOWEST HYGIENE SCORE, NEAREST TO THE NEW RESTAURANT ADDED, "PENANG FLAVOURS"?
 For this portion we needed to identify the top five establishments within a 0.01 longitude and latitude range of the Penang Flavours restaurant with a rating value of 5 and the lowest hygiene score.  Initially, the geographic coordinates were pulled using a find_one function looking for the ‘BusinessName’ ‘Penang Flavours’ and acquiring the geocode for its location which was stored in a variable called ‘target_coordinates’.  The specific longitude and latitude coordinates were then extracted from ‘target_coordinates’ and stored in variables called ‘longitude_coordinate’ & ‘latitude_coordinate’ and the 0.01 surrounding distance was stored in a variable called ‘extra_distance’.   A query called ‘location_query’ was formulated using the specific Penang Flavours location coordinates and adding the extra distance to one side and subtracting the distance from the other side and then using the $gte' & '$lte' functions to find the search diameter with the original location in the middle.  This process was conducted for both the of the original longitudinal and latitudinal coordinates effectively creating a circle with a radius 0.01 surrounding Penang Flavours.  Finally, a criteria of 'RatingValue' = 5 was added to ‘location_query’ completing the query call.  The variable ‘sort’ set was used to sort the 'scores.Hygiene' values in descending order placing the lowest hygiene scores in ascending order, and ‘limit’ was used to set the results to the top five establishments.   The establishments collection was the queried using the .find function and the prepared variables ‘location_query’, ‘sort’ & ‘limit’ variables, with the results placed in a list and stored in ‘location_results’.  A for-loop was used the cycle through the ‘location_results’ and print the results using pprint.  The final step was to put the ‘location_results’ into a dataframe called ‘location_results_df’ using the ‘pd.json_normalize’ function to expand the sub-dictionaries for clarity.  The python code used to accomplish the third portion of the analysis was:
 target_coordinates = establishments.find_one({"BusinessName":"Penang Flavours"},{"geocode" : 1})
