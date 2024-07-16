@@ -36,7 +36,6 @@ A new restaurant ‘Penang Flavours’ and a dictionary of its corresponding dat
 
 We then needed to establish which ‘BusinessTypeID’ should be assigned to the ‘Penang Flavours’ to update it correctly.  We accomplished this by finding out what ID other establishments were assigned of the same business type and updating the ‘BusinessTypeID’ for ‘Penang Flavours’ with that same ID to ensure consistency within the collection.  The steps in this process were to find another restaurant in the ‘establishments’ collection with an identical ‘BusinessType’ and returning the 'BusinessTypeID' & 'BusinessType' fields and then setting the 'BusinessTypeID' of ‘Penang Flavours’ to the identified ID for consistenancy within the collection.  Finally, we again viewed the ‘Penang Flavours’ data to ensure that the 'BusinessTypeID' field was successfully updated.   
 
-<img src="Pics/Update3.png" width="945" height="501">
 <img src="Pics/Update4.png" width="703" height="670">
 
 
