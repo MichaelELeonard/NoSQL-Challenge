@@ -11,14 +11,13 @@ To start this challenge a json file of data was imported the terminal using the 
 
 A Jupyters notebook file ‘NoSQL_setup_working’ was opened in a MS VSCode environment and the dependencies needed for the project were imported:
 
-from pymongo import MongoClient
-from pprint import pprint
+<img src="Pics/SetUp2.png" width="323" height="79">
 
 An instance of the MongoClient was established and a print statement was used to confirm that the ‘uk_food’ database had been successfully imported and was available.  
 
-mongo = MongoClient(port=27017)
-print(mongo.list_database_names())
-['admin', 'classDB', 'config', 'epa', 'fruits_db', 'gardenDB', 'local', 'met', 'travel_db', 'uk_food']
+<img src="Pics/SetUp3.png" width="347" height="57">
+<img src="Pics/SetUp4.png" width="782" height="126">
+
 
 Finally, the uk_food database was assigned to a variable ‘uk_foods_db’, the collection names in the database were reviewed, the first collection of data was viewed to ensure that the set-up process was implemented correctly, and the establishments collection was assigned to a variable ‘establishments’.
 
