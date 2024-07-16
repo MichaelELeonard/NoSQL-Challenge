@@ -41,7 +41,7 @@ We then needed to establish which ‘BusinessTypeID’ should be assigned to the
 
 
 
-We then needed to establish how many documents (restaurants) in the collection there were from the Dover Local Authority and remove them from the DataBase.  The Dover establishments were counted using the count_documents command and returned a total of 994.  The Dover establishments were then deleted using the delete_many command, and then the Dover establishments were again counted showing a result of 0.  Finally, the we used the find_one command to ensure that the other restaurants still remained in the database.    
+We then needed to establish how many documents (restaurants) in the collection there were from the Dover Local Authority and remove them from the DataBase.  The Dover establishments were counted using the count_documents command and returned a total of 994.  The Dover establishments were then deleted using the delete_many command, and then the Dover establishments were again counted showing a result of 0.
 
 <img src="Pics/Update5.png" width="643" height="370">
 
