@@ -36,44 +36,18 @@ A new restaurant ‘Penang Flavours’ and a dictionary of its corresponding dat
 
 We then needed to establish which ‘BusinessTypeID’ should be assigned to the ‘Penang Flavours’ to update it correctly.  We accomplished this by finding out what ID other establishments were assigned of the same business type and updating the ‘BusinessTypeID’ for ‘Penang Flavours’ with that same ID to ensure consistency within the collection.  The steps in this process were to find another restaurant in the ‘establishments’ collection with an identical ‘BusinessType’ and returning the 'BusinessTypeID' & 'BusinessType' fields and then setting the 'BusinessTypeID' of ‘Penang Flavours’ to the identified ID for consistenancy within the collection.  Finally, we again viewed the ‘Penang Flavours’ data to ensure that the 'BusinessTypeID' field was successfully updated.   
 
+<img src="Pics/Update3.png" width="945" height="501">
+<img src="Pics/Update4.png" width="703" height="670">
 
 
-
-query = {'BusinessType': 'Restaurant/Cafe/Canteen'}
-fields = ['BusinessTypeID', 'BusinessType']
-establishments.find_one(query, fields)
-
-returned: 
-
-{'_id': ObjectId('65f783f80d4335043ac85b19'),
- 'BusinessType': 'Restaurant/Cafe/Canteen','BusinessTypeID': 1}
-
-establishments.update_one(
-    {'BusinessName':'Penang Flavours'},
-        {'$set':{'BusinessTypeID': 1}})
-
-returned: 
-
-UpdateResult({'n': 1, 'nModified': 0, 'ok': 1.0, 'updatedExisting': True}, acknowledged=True)
-
-establishments.find_one({'BusinessName':'Penang Flavours'})
-
-returned: 
-
-{'_id': ObjectId('65f784501b1a1886f0fe5576'),
- 'BusinessName': 'Penang Flavours',
- 'BusinessType': 'Restaurant/Cafe/Canteen',
- 'BusinessTypeID': 1,
- 'AddressLine1': 'Penang Flavours',
-...
- 'NewRatingPending': True,
- 'RatingValue': None}
 
 We then needed to establish how many documents (restaurants) in the collection there were from the Dover Local Authority and remove them from the DataBase.  The Dover establishments were counted using the count_documents command and returned a total of 994.  The Dover establishments were then deleted using the delete_many command, and then the Dover establishments were again counted showing a result of 0.  Finally, the we used the find_one command to ensure that the other restaurants still remained in the database.    
-•	establishments.count_documents({'LocalAuthorityName': 'Dover'})
-•	establishments.delete_many({'LocalAuthorityName': 'Dover'})
-•	pprint(establishments.count_documents({'LocalAuthorityName': 'Dover'}))
-•	establishments.find_one({})
+
+<img src="Pics/Update5.png" width="643" height="370">
+
+
+
+
 We then needed to do some cleaning and updating of the database to prepare it for analysis.  We cast all the geocode.longitude & geocode.latitude variables in the database to doubles, updated any non 1-5  Rating Values to Null, and cast the RatingValue to an interger.  For all three steps we used the update_many function with the following code:
 •	establishments.update_many({},[{ '$set':{ 'geocode.longitude': {'$toDouble':'$geocode.longitude'},'geocode.latitude': {'$toDouble': '$geocode.latitude'}}}])
 •	non_ratings = ["AwaitingInspection", "Awaiting Inspection", "AwaitingPublication", "Pass", "Exempt"]
