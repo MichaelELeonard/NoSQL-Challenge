@@ -69,8 +69,7 @@ There were four questions that were examined by the analysis portion of the NoSQ
 * Which establishments in London have a `RatingValue` greater than or equal to 4?
 * What are the top 5 establishments with a `RatingValue` rating value of 5, sorted by lowest hygiene score, nearest to the new restaurant added, "Penang Flavours"?
 * How many establishments in each Local Authority area have a hygiene score of 0?
-
-<br>  
+ 
 The results of these four questions were pulled from the database using techniques learned in class with the solution then uploaded into a Pandas Dataframe for examination.   
 
 #### WHICH ESTABLISHMENTS HAVE A HYGIENE SCORE EQUAL TO 20?
