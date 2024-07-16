@@ -87,28 +87,8 @@ For this question a query ‘RatingValue_query’ was set up to find any permuta
 
 ### WHAT ARE THE TOP 5 ESTABLISHMENTS WITH A `RATINGVALUE` RATING VALUE OF 5, SORTED BY LOWEST HYGIENE SCORE, NEAREST TO THE NEW RESTAURANT ADDED, "PENANG FLAVOURS"?
 For this portion we needed to identify the top five establishments within a 0.01 longitude and latitude range of the Penang Flavours restaurant with a rating value of 5 and the lowest hygiene score.  Initially, the geographic coordinates were pulled using a find_one function looking for the ‘BusinessName’ ‘Penang Flavours’ and acquiring the geocode for its location which was stored in a variable called ‘target_coordinates’.  The specific longitude and latitude coordinates were then extracted from ‘target_coordinates’ and stored in variables called ‘longitude_coordinate’ & ‘latitude_coordinate’ and the 0.01 surrounding distance was stored in a variable called ‘extra_distance’.   A query called ‘location_query’ was formulated using the specific Penang Flavours location coordinates and adding the extra distance to one side and subtracting the distance from the other side and then using the $gte' & '$lte' functions to find the search diameter with the original location in the middle.  This process was conducted for both the of the original longitudinal and latitudinal coordinates effectively creating a circle with a radius 0.01 surrounding Penang Flavours.  Finally, a criteria of 'RatingValue' = 5 was added to ‘location_query’ completing the query call.  The variable ‘sort’ set was used to sort the 'scores.Hygiene' values in descending order placing the lowest hygiene scores in ascending order, and ‘limit’ was used to set the results to the top five establishments.   The establishments collection was the queried using the .find function and the prepared variables ‘location_query’, ‘sort’ & ‘limit’ variables, with the results placed in a list and stored in ‘location_results’.  A for-loop was used the cycle through the ‘location_results’ and print the results using pprint.  The final step was to put the ‘location_results’ into a dataframe called ‘location_results_df’ using the ‘pd.json_normalize’ function to expand the sub-dictionaries for clarity.  The python code used to accomplish the third portion of the analysis was:
-target_coordinates = establishments.find_one({"BusinessName":"Penang Flavours"},{"geocode" : 1})
 
-longitude_coordinate = target_coordinates['geocode']['longitude']
-latitude_coordinate = target_coordinates['geocode']['latitude']
-extra_distance = 0.01
-
-location_query = {'geocode.longitude':{'$gte': longitude_coordinate - extra_distance, '$lte': longitude_coordinate + extra_distance},
-                'geocode.latitude':{'$gte': latitude_coordinate - extra_distance, '$lte': latitude_coordinate + extra_distance},
-                'RatingValue':5}
-
-sort = [('scores.Hygiene', 1)]
-
-limit = 5
-
-location_results = list(establishments.find(location_query).sort(sort).limit(limit))
-
-for location in location_results:
-    pprint(location)
-
-location_results_df = pd.json_normalize(location_results)
-
-location_results_df
+<img src="Pics/Analysis3.png" width="1027" height="595">
 
 ### HOW MANY ESTABLISHMENTS IN EACH LOCAL AUTHORITY AREA HAVE A HYGIENE SCORE OF 0?
 For the final portion of the analysis we needed to set up a query pipeline that matched 'scores.Hygiene' values of 0, grouped by '$LocalAuthorityName', with a variable 'count' established and sorted in descending order.  The variables ‘match’, ‘group’ and ‘sort’ were then placed in a list and with named ‘pipeline’.  The list ‘pipeline’ was fed into the establishments.aggregate function with the results placed into a list and stored in a variable ‘pipeline_results’.  The number of documents (restaurants) was found using the ‘len’ function totaling 55, and the first ten results were displayed using the pprint function.  The final step was to put the ‘pipeline_resultsinto a dataframe called ‘pipeline_results_df’ using the ‘pd.json_normalize’ function to expand the sub-dictionaries for clarity.  The python code used to accomplish the fourth portion of the analysis was:
