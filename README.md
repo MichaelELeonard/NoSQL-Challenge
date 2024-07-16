@@ -92,32 +92,7 @@ For this portion we needed to identify the top five establishments within a 0.01
 
 ### HOW MANY ESTABLISHMENTS IN EACH LOCAL AUTHORITY AREA HAVE A HYGIENE SCORE OF 0?
 For the final portion of the analysis we needed to set up a query pipeline that matched 'scores.Hygiene' values of 0, grouped by '$LocalAuthorityName', with a variable 'count' established and sorted in descending order.  The variables ‘match’, ‘group’ and ‘sort’ were then placed in a list and with named ‘pipeline’.  The list ‘pipeline’ was fed into the establishments.aggregate function with the results placed into a list and stored in a variable ‘pipeline_results’.  The number of documents (restaurants) was found using the ‘len’ function totaling 55, and the first ten results were displayed using the pprint function.  The final step was to put the ‘pipeline_resultsinto a dataframe called ‘pipeline_results_df’ using the ‘pd.json_normalize’ function to expand the sub-dictionaries for clarity.  The python code used to accomplish the fourth portion of the analysis was:
-match = {'$match': {'scores.Hygiene' : 0}}
 
-group = {'$group': {'_id' : '$LocalAuthorityName' , 'count' : {'$sum':1}}}
-
-sort = {'$sort':{'count' : -1}}
-
-pipeline = [match, group, sort]
-
-pipeline_results = list(establishments.aggregate(pipeline))
-
-print(f'{len(pipeline_results)} documents in the result.')
-print('')
-print('--------------------')
-print('')
-
-pprint(pipeline_results[0:10])
-
-pipeline_results_df = pd.json_normalize(pipeline_results)
-
-print(f'The number of rows in this DataFrame is: {len(pipeline_results_df)}')
-print('')
-print('--------------------')
-print('')
-
-pipeline_results_df.head(10)     
-
-
+<img src="Pics/Analysis4.png" width="600" height="740">
 
 
