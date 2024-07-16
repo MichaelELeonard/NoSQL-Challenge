@@ -21,10 +21,8 @@ An instance of the MongoClient was established and a print statement was used to
 
 Finally, the uk_food database was assigned to a variable ‘uk_foods_db’, the collection names in the database were reviewed, the first collection of data was viewed to ensure that the set-up process was implemented correctly, and the establishments collection was assigned to a variable ‘establishments’.
 
-uk_foods_db = mongo.uk_food
-print(uk_foods_db.list_collection_names()) displaying ['establishments']
-pprint(uk_foods_db.establishments.find_one())
-establishments = uk_foods_db.establishments
+<img src="Pics/SetUp5.png" width="491" height="70">
+<img src="Pics/SetUp6.png" width="558" height="107">
 
 
 
