@@ -4,7 +4,7 @@
 # THE SCENARIO
 The UK Food Standards Agency evaluates various establishments across the United Kingdom and gives them a food hygiene rating. You've been contracted by the editors of a food magazine, Eat Safe, Love, to evaluate some of the ratings data to help their journalists and food critics decide where to focus future articles.
 
-# PART 1: DATABASE AND JUPYTER NOTEBOOK SET UP 
+### PART 1: DATABASE AND JUPYTER NOTEBOOK SET UP 
 To start this challenge a json file of data was imported the terminal using the mongoimport command: 
 
 <img src="Pics/SetUp1.png" width="805" height="20">
@@ -26,7 +26,7 @@ Finally, the uk_food database was assigned to a variable ‘uk_foods_db’, the 
 
 
 
-# PART 2: UPDATE THE DATABASE
+## PART 2: UPDATE THE DATABASE
 A new restaurant ‘Penang Flavours’ and a dictionary of its corresponding data was saved in a variable ‘new_restaurant _entry’ and added to the existing establishments collection using an insert_one command.  Finally, a find_one command was used to confirm that the ‘Penang Flavours’ restaurant was successfully added to the establishments collection.   
  
 <img src="Pics/Update1.png" width="706" height="568">
