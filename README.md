@@ -49,29 +49,17 @@ We then needed to establish how many documents (restaurants) in the collection t
 
 
 We then needed to do some cleaning and updating of the database to prepare it for analysis.  We cast all the geocode.longitude & geocode.latitude variables in the database to doubles, updated any non 1-5  Rating Values to Null, and cast the RatingValue to an interger.  For all three steps we used the update_many function with the following code:
-•	establishments.update_many({},[{ '$set':{ 'geocode.longitude': {'$toDouble':'$geocode.longitude'},'geocode.latitude': {'$toDouble': '$geocode.latitude'}}}])
-•	non_ratings = ["AwaitingInspection", "Awaiting Inspection", "AwaitingPublication", "Pass", "Exempt"]
-o	establishments.update_many({"RatingValue": {"$in": non_ratings}}, [ {'$set':{ "RatingValue" : None}} ])
-•	establishments.update_many({},[{'$set':{ 'RatingValue': {'$toInt':'$RatingValue'}}}])
+
+
+<img src="Pics/Update6.png" width="828" height="637">
+
+
 
 Finally, the first five results in the database were checked to ensure that the changes were implemented correctly.  The following code was used to ensure that the changes were made correctly:  
-query = {}
-fields = {'geocode.longitude' : 1, 'geocode.latitude' : 1, "RatingValue" : 1 }
-limit = 5
 
-data_type_change_results = list(establishments.find(query, fields).limit(limit))
 
-pprint(data_type_change_results)
+<img src="Pics/Update7.png" width="660" height="472">
 
-returning: 
-
-[{'RatingValue': 5,
-  '_id': ObjectId('65fa28ccf99c90183fb948d9'),
-  'geocode': {'latitude': 51.083812, 'longitude': 1.195625}},
- ...
- {'RatingValue': 5,
-  '_id': ObjectId('65fa28ccf99c90183fb948df'),
-  'geocode': {'latitude': 51.0783519967076, 'longitude': 1.18590330311705}}]
 
 # PART 3: EXPLORATORY ANALYSIS
 For the analysis portion of the challenge the same uk_food database and establishments collections were used and a jupyter file named ‘NoSQL_analysis_working’ was established.  The importing of dependencies and a database connection was implemented consistent with the techniques used earlier in the code.  The only difference in the setup was ‘import pandas as pd’ was imported to add the Pandas Dataframe functionality to the analysis.  
