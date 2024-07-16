@@ -6,19 +6,29 @@ The UK Food Standards Agency evaluates various establishments across the United 
 
 # PART 1: DATABASE AND JUPYTER NOTEBOOK SET UP 
 To start this challenge a json file of data was imported the terminal using the mongoimport command: 
-mongoimport --type json -d uk_food -c establishments --drop --jsonArray establishments.json
+
+<img src="Pics/Set Up #1.png" width="805" height="20">
+
 A Jupyters notebook file ‘NoSQL_setup_working’ was opened in a MS VSCode environment and the dependencies needed for the project were imported:
+
 from pymongo import MongoClient
 from pprint import pprint
-An instance of the MongoClient was established and a print statement was used to confirm that the ‘uk_food’ database had been successfully imported and was available.   
+
+An instance of the MongoClient was established and a print statement was used to confirm that the ‘uk_food’ database had been successfully imported and was available.  
+
 mongo = MongoClient(port=27017)
 print(mongo.list_database_names())
 ['admin', 'classDB', 'config', 'epa', 'fruits_db', 'gardenDB', 'local', 'met', 'travel_db', 'uk_food']
+
 Finally, the uk_food database was assigned to a variable ‘uk_foods_db’, the collection names in the database were reviewed, the first collection of data was viewed to ensure that the set-up process was implemented correctly, and the establishments collection was assigned to a variable ‘establishments’.
+
 uk_foods_db = mongo.uk_food
 print(uk_foods_db.list_collection_names()) displaying ['establishments']
 pprint(uk_foods_db.establishments.find_one())
 establishments = uk_foods_db.establishments
+
+
+
 # PART 2: UPDATE THE DATABASE
 A new restaurant ‘Penang Flavours’ and a dictionary of its corresponding data was saved in a variable ‘new_restaurant _entry’ and added to the existing establishments collection using an insert_one command.  Finally, a find_one command was used to confirm that the ‘Penang Flavours’ restaurant was successfully added to the establishments collection.   
 •	new_restaurant_entry = {
