@@ -1,5 +1,10 @@
-# Week 12 - NoSQL-Challenge
 <img src="Pics/Header1.png" width="900" height="500">
+
+# NoSQL Challenge
+
+NoSQL Challenge Setup Code - https://github.com/MichaelELeonard/nosql-challenge/blob/main/NoSQL_setup_working.ipynb
+NoSQL Challenge Analysis Code - https://github.com/MichaelELeonard/nosql-challenge/blob/main/NoSQL_analysis_working.ipynb
+
 
 ## THE SCENARIO
 The UK Food Standards Agency evaluates various establishments across the United Kingdom and gives them a food hygiene rating. You've been contracted by the editors of a food magazine, Eat Safe, Love, to evaluate some of the ratings data to help their journalists and food critics decide where to focus future articles.
