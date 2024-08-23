@@ -73,8 +73,8 @@ For the analysis portion of the challenge the same uk_food database and establis
 
 There were four questions that were examined by the analysis portion of the NoSQL-Challenge.  These four questions included:
 * Which establishments have a hygiene score equal to 20?
-* Which establishments in London have a `RatingValue` greater than or equal to 4?
-* What are the top 5 establishments with a `RatingValue` rating value of 5, sorted by lowest hygiene score, nearest to the new restaurant added, "Penang Flavours"?
+* Which establishments in London have a “RatingValue” greater than or equal to 4?
+* What are the top 5 establishments with a “RatingValue” rating value of 5, sorted by lowest hygiene score, nearest to the new restaurant added, "Penang Flavours"?
 * How many establishments in each Local Authority area have a hygiene score of 0?
  
 The results of these four questions were pulled from the database using techniques learned in class with the solution then uploaded into a Pandas Dataframe for examination.   
