@@ -93,6 +93,7 @@ The results of these four questions were pulled from the database using techniqu
 ### WHAT ARE THE TOP 5 ESTABLISHMENTS WITH A `RATINGVALUE` RATING VALUE OF 5, SORTED BY LOWEST HYGIENE SCORE, NEAREST TO THE NEW RESTAURANT ADDED, "PENANG FLAVOURS"?
 
 <img src="Pics/Analysis3.png" width="1027" height="595">
+<img src="Pics/Analysis3.5.png" width="624" height="602">
 
 ### HOW MANY ESTABLISHMENTS IN EACH LOCAL AUTHORITY AREA HAVE A HYGIENE SCORE OF 0?
 
