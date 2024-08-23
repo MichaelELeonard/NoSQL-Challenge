@@ -12,7 +12,7 @@ NoSQL Challenge Analysis Code - https://github.com/MichaelELeonard/nosql-challen
 The UK Food Standards Agency evaluates various establishments across the United Kingdom and gives them a food hygiene rating. You've been contracted by the editors of a food magazine, Eat Safe, Love, to evaluate some of the ratings data to help their journalists and food critics decide where to focus future articles.
 
 ### PART 1: DATABASE AND JUPYTER NOTEBOOK SET UP 
-To start this challenge a json file of data was imported the terminal using the mongoimport command: 
+A json file of data was imported the terminal using the mongoimport command: 
 
 <img src="Pics/SetUp1.png" width="805" height="20">
 
@@ -26,7 +26,7 @@ An instance of the MongoClient was established and a print statement was used to
 <img src="Pics/SetUp4.png" width="782" height="126">
 
 
-Finally, the uk_food database was assigned to a variable ‘uk_foods_db’, the collection names in the database were reviewed, the first collection of data was viewed to ensure that the set-up process was implemented correctly, and the establishments collection was assigned to a variable ‘establishments’.
+The uk_food database was assigned to a variable ‘uk_foods_db’, the collection names in the database were reviewed, the first collection of data was viewed to ensure that the set-up process was implemented correctly, and the establishments collection was assigned to a variable ‘establishments’.
 
 <img src="Pics/SetUp5.png" width="491" height="70">
 <img src="Pics/SetUp6.png" width="558" height="107">
@@ -41,14 +41,14 @@ A new restaurant ‘Penang Flavours’ and a dictionary of its corresponding dat
 
 
 
-We then needed to establish which ‘BusinessTypeID’ should be assigned to the ‘Penang Flavours’ to update it correctly.  We accomplished this by finding out what ID other establishments were assigned of the same business type and updating the ‘BusinessTypeID’ for ‘Penang Flavours’ with that same ID to ensure consistency within the collection.  The steps in this process were to find another restaurant in the ‘establishments’ collection with an identical ‘BusinessType’ and returning the 'BusinessTypeID' & 'BusinessType' fields and then setting the 'BusinessTypeID' of ‘Penang Flavours’ to the identified ID for consistenancy within the collection.  Finally, we again viewed the ‘Penang Flavours’ data to ensure that the 'BusinessTypeID' field was successfully updated.   
+We then needed to establish which ‘BusinessTypeID’ should be assigned to the ‘Penang Flavours’ to update it correctly.  We accomplished this by finding out what ID other establishments were assigned of the same business type and updating the ‘BusinessTypeID’ for ‘Penang Flavours’ with that same ID to ensure consistency within the collection.  
 
 <img src="Pics/Update3.png" width="914" height="221">
 <img src="Pics/Update4.png" width="703" height="670">
 
 
 
-We then needed to establish how many documents (restaurants) in the collection there were from the Dover Local Authority and remove them from the DataBase.  The Dover establishments were counted using the count_documents command and returned a total of 994.  The Dover establishments were then deleted using the delete_many command, and then the Dover establishments were again counted showing a result of 0.
+We needed to establish how many documents (restaurants) in the collection there were from the Dover Local Authority and remove them from the DataBase.  The Dover establishments were counted using the count_documents command and returned a total of 994.  The Dover establishments were then deleted using the delete_many command and then the Dover establishments were again counted showing a result of 0.
 
 <img src="Pics/Update5.png" width="643" height="370">
 
@@ -62,7 +62,7 @@ We then needed to do some cleaning and updating of the database to prepare it fo
 
 
 
-Finally, the first five results in the database were checked to ensure that the changes were implemented correctly.  The following code was used to ensure that the changes were made correctly:  
+The first five results in the database were checked to ensure that the changes were implemented correctly.  The following code was used to ensure that the changes were made correctly:  
 
 
 <img src="Pics/Update7.png" width="660" height="472">
@@ -79,26 +79,22 @@ There were four questions that were examined by the analysis portion of the NoSQ
  
 The results of these four questions were pulled from the database using techniques learned in class with the solution then uploaded into a Pandas Dataframe for examination.   
 
-#### WHICH ESTABLISHMENTS HAVE A HYGIENE SCORE EQUAL TO 20?
-For this question a query was set up using 'scores.Hygiene' = 20 and then the query established using the .find function with the results being stored in a variable called ‘hygiene_results’.  The count_doucments function was used to display the number of documents (restaurants) resulting from the query, with the total stored in ‘hygiene_count’.  The resulting count output was 41 establishments had hygiene scores = 20 and the find_one function was used to display the first establishment meeting the criteria.  The code used to acquire the desired result was:
+### WHICH ESTABLISHMENTS HAVE A HYGIENE SCORE EQUAL TO 20?
 
 <img src="Pics/Analysis1.png" width="617" height="403">
 
 
-### WHICH ESTABLISHMENTS IN LONDON HAVE A `RATINGVALUE` GREATER THAN OR EQUAL TO 4?
-For this question a query ‘RatingValue_query’ was set up to find any permutation of London in the field 'LocalAuthorityName' which also had a ‘RatingValue’ of greater than or equal to 4.  ‘RatingValue_query’ used the '$regex' function to locate London in the 'LocalAuthorityName' and '$gte' was used to find the RatingValues greater than or equal to 4.  ‘RatingValue_query’ was used with a .find function to query the establishments collection and the results being stored in the variable RatingValue_results.  The count_doucments function was used to display the number of documents (restaurants) resulting from the query with the total stored in ‘RatingValue_count’.  The resulting count output was that there was 33 establishments in London with RatingValue >= 4.  The code used to acquire the desired result was:
+### WHICH ESTABLISHMENTS IN LONDON HAVE A “RATINGVALUE” GREATER THAN OR EQUAL TO 4?
 
 <img src="Pics/Analysis2.png" width="860" height="383">
 
 
 
 ### WHAT ARE THE TOP 5 ESTABLISHMENTS WITH A `RATINGVALUE` RATING VALUE OF 5, SORTED BY LOWEST HYGIENE SCORE, NEAREST TO THE NEW RESTAURANT ADDED, "PENANG FLAVOURS"?
-For this portion we needed to identify the top five establishments within a 0.01 longitude and latitude range of the Penang Flavours restaurant with a rating value of 5 and the lowest hygiene score.  Initially, the geographic coordinates were pulled using a find_one function looking for the ‘BusinessName’ ‘Penang Flavours’ and acquiring the geocode for its location which was stored in a variable called ‘target_coordinates’.  The specific longitude and latitude coordinates were then extracted from ‘target_coordinates’ and stored in variables called ‘longitude_coordinate’ & ‘latitude_coordinate’ and the 0.01 surrounding distance was stored in a variable called ‘extra_distance’.   A query called ‘location_query’ was formulated using the specific Penang Flavours location coordinates and adding the extra distance to one side and subtracting the distance from the other side and then using the $gte' & '$lte' functions to find the search diameter with the original location in the middle.  This process was conducted for both the of the original longitudinal and latitudinal coordinates effectively creating a circle with a radius 0.01 surrounding Penang Flavours.  Finally, a criteria of 'RatingValue' = 5 was added to ‘location_query’ completing the query call.  The variable ‘sort’ set was used to sort the 'scores.Hygiene' values in descending order placing the lowest hygiene scores in ascending order, and ‘limit’ was used to set the results to the top five establishments.   The establishments collection was the queried using the .find function and the prepared variables ‘location_query’, ‘sort’ & ‘limit’ variables, with the results placed in a list and stored in ‘location_results’.  A for-loop was used the cycle through the ‘location_results’ and print the results using pprint.  The final step was to put the ‘location_results’ into a dataframe called ‘location_results_df’ using the ‘pd.json_normalize’ function to expand the sub-dictionaries for clarity.  The python code used to accomplish the third portion of the analysis was:
 
 <img src="Pics/Analysis3.png" width="1027" height="595">
 
 ### HOW MANY ESTABLISHMENTS IN EACH LOCAL AUTHORITY AREA HAVE A HYGIENE SCORE OF 0?
-For the final portion of the analysis we needed to set up a query pipeline that matched 'scores.Hygiene' values of 0, grouped by '$LocalAuthorityName', with a variable 'count' established and sorted in descending order.  The variables ‘match’, ‘group’ and ‘sort’ were then placed in a list and with named ‘pipeline’.  The list ‘pipeline’ was fed into the establishments.aggregate function with the results placed into a list and stored in a variable ‘pipeline_results’.  The number of documents (restaurants) was found using the ‘len’ function totaling 55, and the first ten results were displayed using the pprint function.  The final step was to put the ‘pipeline_resultsinto a dataframe called ‘pipeline_results_df’ using the ‘pd.json_normalize’ function to expand the sub-dictionaries for clarity.  The python code used to accomplish the fourth portion of the analysis was:
 
 <img src="Pics/Analysis4.png" width="600" height="740">
 
