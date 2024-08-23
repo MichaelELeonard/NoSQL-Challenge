@@ -44,7 +44,7 @@ A new restaurant ‘Penang Flavours’ and a dictionary of its corresponding dat
 We then needed to establish which ‘BusinessTypeID’ should be assigned to the ‘Penang Flavours’ to update it correctly.  We accomplished this by finding out what ID other establishments were assigned of the same business type and updating the ‘BusinessTypeID’ for ‘Penang Flavours’ with that same ID to ensure consistency within the collection.  
 
 <img src="Pics/Update3.png" width="914" height="221">
-<img src="Pics/Update4.png" width="703" height="670">
+<img src="Pics/Update4.png" width="428" height="100">
 
 
 
@@ -93,7 +93,6 @@ The results of these four questions were pulled from the database using techniqu
 ### WHAT ARE THE TOP 5 ESTABLISHMENTS WITH A `RATINGVALUE` RATING VALUE OF 5, SORTED BY LOWEST HYGIENE SCORE, NEAREST TO THE NEW RESTAURANT ADDED, "PENANG FLAVOURS"?
 
 <img src="Pics/Analysis3.png" width="1027" height="595">
-<img src="Pics/Analysis3.5.png" width="624" height="602">
 
 ### HOW MANY ESTABLISHMENTS IN EACH LOCAL AUTHORITY AREA HAVE A HYGIENE SCORE OF 0?
 
