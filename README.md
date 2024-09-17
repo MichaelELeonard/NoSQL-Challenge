@@ -9,7 +9,7 @@ NoSQL Challenge Analysis Code - https://github.com/MichaelELeonard/nosql-challen
 <br>
 
 ## THE SCENARIO
-The UK Food Standards Agency evaluates various establishments across the United Kingdom and gives them a food hygiene rating. You've been contracted by the editors of a food magazine, Eat Safe, Love, to evaluate some of the ratings data to help their journalists and food critics decide where to focus future articles.
+The UK Food Standards Agency evaluates various establishments across the United Kingdom and gives them a food hygiene rating. We have been contracted by the editors of a food magazine, Eat Safe, Love, to evaluate some of the ratings data to help their journalists and food critics decide where to focus future articles.
 
 ### PART 1: DATABASE AND JUPYTER NOTEBOOK SET UP 
 A json file of data was imported the terminal using the mongoimport command: 
