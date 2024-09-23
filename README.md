@@ -30,7 +30,7 @@ The uk_food database was assigned to a variable ‘uk_foods_db’, the collectio
 ### PART 2: UPDATE THE DATABASE
 A new restaurant ‘Penang Flavours’ and a dictionary of its corresponding data was saved in a variable ‘new_restaurant _entry’ and added to the existing establishments collection using an insert_one command.  Finally, a find_one command was used to confirm that the ‘Penang Flavours’ restaurant was successfully added to the establishments collection.   
  
-<img src="Pics/Update2.png" width="578" height="390">
+<img src="Pics/Update2.png" width="572" height="383">
 
 
 
