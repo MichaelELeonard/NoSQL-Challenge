@@ -16,10 +16,6 @@ A json file of data was imported the terminal using the mongoimport command:
 
 <img src="Pics/SetUp1.png" width="805" height="20">
 
-A Jupyters notebook file ‘NoSQL_setup_working’ was opened in a MS VSCode environment and the dependencies needed for the project were imported:
-
-<img src="Pics/SetUp2.png" width="323" height="79">
-
 An instance of the MongoClient was established and a print statement was used to confirm that the ‘uk_food’ database had been successfully imported and was available.  
 
 <img src="Pics/SetUp3.png" width="347" height="57">
