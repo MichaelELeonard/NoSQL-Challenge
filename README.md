@@ -68,22 +68,22 @@ There were four questions that were examined by the analysis portion of the NoSQ
 * What are the top 5 establishments with a “RatingValue” rating value of 5, sorted by lowest hygiene score, nearest to the new restaurant added, "Penang Flavours"?
 * How many establishments in each Local Authority area have a hygiene score of 0?
  
-### WHICH ESTABLISHMENTS HAVE A HYGIENE SCORE EQUAL TO 20?
+### Which establishments have a hygiene score equal to 20?
 
 <img src="Pics/Analysis1.png" width="334" height="39">
 
 
-### WHICH ESTABLISHMENTS IN LONDON HAVE A “RATINGVALUE” GREATER THAN OR EQUAL TO 4?
+### Which establishments in London have a “RatingValue” greater than or equal to 4?
 
 <img src="Pics/Analysis2.png" width="572" height="38">
 
 
 
-### WHAT ARE THE TOP 5 ESTABLISHMENTS WITH A `RATINGVALUE` RATING VALUE OF 5, SORTED BY LOWEST HYGIENE SCORE, NEAREST TO THE NEW RESTAURANT ADDED, "PENANG FLAVOURS"?
+### What are the top 5 establishments with a “RatingValue” rating value of 5, sorted by lowest hygiene score, nearest to the new restaurant added, "Penang Flavours"?
 
 <img src="Pics/Analysis3.png" width="499" height="356">
 
-### HOW MANY ESTABLISHMENTS IN EACH LOCAL AUTHORITY AREA HAVE A HYGIENE SCORE OF 0?
+### How many establishments in each Local Authority area have a hygiene score of 0?
 
 <img src="Pics/Analysis4.png" width="232" height="39">
 
