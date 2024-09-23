@@ -27,7 +27,7 @@ The uk_food database was assigned to a variable ‘uk_foods_db’, the collectio
 
 
 
-### PART 2: Update The Database
+### Part 2: Update the Database
 A new restaurant ‘Penang Flavours’ and a dictionary of its corresponding data was added to the existing establishments collection.  
  
 <img src="Pics/Update2.png" width="572" height="383">
@@ -59,7 +59,7 @@ The first five results in the database were checked to ensure that the changes w
 <img src="Pics/Update8.png" width="581" height="294">
 
 
-### PART 3: Exploratory Analysis
+### Part 3: Exploratory Analysis
 For the analysis portion of the challenge the same uk_food database and establishments collections were used and a jupyter file named ‘NoSQL_analysis_working’ was established.  The importing of dependencies and a database connection was implemented consistent with the techniques used earlier in the code.  The only difference in the setup was ‘import pandas as pd’ was imported to add the Pandas Dataframe functionality to the analysis.  
 
 There were four questions that were examined by the analysis portion of the NoSQL-Challenge.  These four questions included:
