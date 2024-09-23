@@ -60,8 +60,6 @@ The first five results in the database were checked to ensure that the changes w
 
 
 ### Part 3: Exploratory Analysis
-For the analysis portion of the challenge the same uk_food database and establishments collections were used and a jupyter file named ‘NoSQL_analysis_working’ was established.  The importing of dependencies and a database connection was implemented consistent with the techniques used earlier in the code.  The only difference in the setup was ‘import pandas as pd’ was imported to add the Pandas Dataframe functionality to the analysis.  
-
 There were four questions that were examined by the analysis portion of the NoSQL-Challenge.  These four questions included:
 * Which establishments have a hygiene score equal to 20?
 * Which establishments in London have a “RatingValue” greater than or equal to 4?
