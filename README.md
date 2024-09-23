@@ -50,7 +50,7 @@ We needed to establish how many documents (restaurants) in the collection there 
 
 
 
-We then needed to do some cleaning and updating of the database to prepare it for analysis.  We cast all the geocode.longitude & geocode.latitude variables in the database to doubles, updated any non 1-5  Rating Values to Null, and cast the RatingValue to an interger.  For all three steps we used the update_many function with the following code:
+We then needed to do some cleaning and updating of the database to prepare it for analysis.  The geocode.longitude & geocode.latitude variables were cast to doubles, any non 1-5  Rating Values to Null, and RatingValues were cast to an intergers
 
 
 The first five results in the database were checked to ensure that the changes were implemented correctly.  The following code was used to ensure that the changes were made correctly:  
