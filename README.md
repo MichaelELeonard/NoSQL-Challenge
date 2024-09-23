@@ -36,8 +36,8 @@ A new restaurant ‘Penang Flavours’ and a dictionary of its corresponding dat
 
 We then needed to establish which ‘BusinessTypeID’ should be assigned to the ‘Penang Flavours’ to update it correctly.  We accomplished this by finding out what ID other establishments were assigned of the same business type and updating the ‘BusinessTypeID’ for ‘Penang Flavours’ with that same ID to ensure consistency within the collection.  
 
-<img src="Pics/Update3.png" width="914" height="221">
-<img src="Pics/Update4.png" width="703" height="670">
+<img src="Pics/Update3.png" width="361" height="75">
+<img src="Pics/Update4.png" width="576" height="379">
 
 
 
