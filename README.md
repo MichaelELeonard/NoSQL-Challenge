@@ -54,7 +54,7 @@ We then needed to do some cleaning and updating of the database to prepare it fo
 The first five results in the database were checked to ensure that the changes were implemented correctly.  The following code was used to ensure that the changes were made correctly:  
 
 
-<img src="Pics/Update7.png" width="581" height="294">
+<img src="Pics/Update8.png" width="581" height="294">
 
 
 ### PART 3: EXPLORATORY ANALYSIS
