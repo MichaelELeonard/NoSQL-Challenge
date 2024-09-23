@@ -21,7 +21,7 @@ An instance of the MongoClient was established and a print statement was used to
 <img src="Pics/SetUp4.png" width="767" height="37">
 
 
-The uk_food database was assigned to a variable ‘uk_foods_db’, the collection names in the database were reviewed, the first collection of data was viewed to ensure that the set-up process was implemented correctly, and ‘establishments’ was identified as the existing table.
+The uk_food database was assigned to a variable ‘uk_foods_db’, the collection names in the database were reviewed, and ‘establishments’ was identified as the existing table.
 
 <img src="Pics/SetUp6.png" width="166" height="40">
 
