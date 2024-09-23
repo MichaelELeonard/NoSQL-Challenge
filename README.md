@@ -53,8 +53,7 @@ We needed to establish how many documents (restaurants) in the collection there 
 We then needed to do some cleaning and updating of the database to prepare it for analysis.  The geocode.longitude & geocode.latitude variables were cast to doubles, any non 1-5  Rating Values to Null, and RatingValues were cast to an intergers
 
 
-The first five results in the database were checked to ensure that the changes were implemented correctly.  The following code was used to ensure that the changes were made correctly:  
-
+The first five results in the database were checked to ensure that the changes were implemented correctly.
 
 <img src="Pics/Update8.png" width="581" height="294">
 
