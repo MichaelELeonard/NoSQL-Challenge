@@ -2,9 +2,9 @@
 
 # NoSQL Challenge
 
-NoSQL Challenge Setup Code - https://github.com/MichaelELeonard/nosql-challenge/blob/main/NoSQL_setup_working.ipynb
+[NoSQL Challenge Setup Code Link]( https://github.com/MichaelELeonard/nosql-challenge/blob/main/NoSQL_setup_working.ipynb)
 
-NoSQL Challenge Analysis Code - https://github.com/MichaelELeonard/nosql-challenge/blob/main/NoSQL_analysis_working.ipynb
+[NoSQL Challenge Analysis Code Link]( https://github.com/MichaelELeonard/nosql-challenge/blob/main/NoSQL_analysis_working.ipynb)
 
 <br>
 
