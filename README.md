@@ -21,14 +21,14 @@ An instance of the MongoClient was established and a print statement was used to
 <img src="Pics/SetUp4.png" width="767" height="37">
 
 
-‘Establishments’ was identified as the only collection in the uk_food database.
+‘Establishments’ was identified as the only collection in the ‘uk_food’ database.
 
 <img src="Pics/SetUp6.png" width="166" height="40">
 
 
 
 ### Part 2: Update the Database
-A new document entry for the restaurant ‘Penang Flavours’ was added to the existing Establishments collection.  
+A new document entry for the restaurant ‘Penang Flavours’ was added to the existing ‘establishments’ collection.  
  
 <img src="Pics/Update2.png" width="572" height="383">
 
