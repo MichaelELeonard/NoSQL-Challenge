@@ -28,7 +28,7 @@ An instance of the MongoClient was established and a print statement was used to
 
 
 ### Part 2: Update the Database
-A new document entry for the restaurant ‘Penang Flavours’ was added to the existing establishments collection.  
+A new document entry for the restaurant ‘Penang Flavours’ was added to the existing Establishments collection.  
  
 <img src="Pics/Update2.png" width="572" height="383">
 
